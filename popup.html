@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 320px; /* Slightly wider for better video aspect ratios */
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background: #0b0d17;
+      color: white;
+      padding: 20px;
+    }
+    
+    /* This container ensures the border follows the media shape */
+    .media-container {
+      display: inline-block;
+      line-height: 0; /* Removes extra space at bottom of images */
+      border: 3px solid #d3d3d3; /* Light gray */
+      border-radius: 12px;
+      overflow: hidden; /* Clips the media to the rounded corners */
+      background: #000;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.718);
+    }
+
+    #apod-img, #apod-video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #apod-video {
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
+
+    .title {
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #eee;
+    }
+
+    #apod-link {
+      text-decoration: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <a id="apod-link" href="#">
+    <div class="media-container">
+      <img id="apod-img" src="icon128.png" alt="NASA APOD">
+      <iframe id="apod-video" src="" style="display:none;" allowfullscreen></iframe>
+    </div>
+    <div class="title" id="apod-title">Loading Mission Intelligence...</div>
+  </a>
+  <script src="popup.js"></script>
+</body>
+</html>
